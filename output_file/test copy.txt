@@ -1,0 +1,11 @@
+\begin{table}
+	\centering
+	\begin{tabular}{ccc}
+		1 & 2 & 3\\
+		0.1 & 0.2 & 0.3\\
+		4 & 5 & 9\\
+	\end{tabular}
+	\caption{工作表1}
+\end{table}
+
+
