@@ -4,7 +4,7 @@ import openpyxl
 import os
 from file_and_path import *
 
-def xlsx_to_latex(filename: str, xlsx_dir: str, output_dir: str):
+def xlsx_to_latex(filename: str, xlsx_dir: str, output_dir: str, accuracy = 2):
     '''将指定的某个名称的表格转化成latex代码,并输出到指定目录下,存储在同名的txt文件下'''
     workbook = openpyxl.load_workbook(filename=os.path.join(xlsx_dir, filename), data_only=True)
     f = open(os.path.join(output_dir, f"{filename.split('.')[0]}.txt"), 'w')
@@ -17,8 +17,14 @@ def xlsx_to_latex(filename: str, xlsx_dir: str, output_dir: str):
             n = max(len(row), n)
             data_string += "\t\t"
             for cell in row[:-1]:
-                data_string += f"{cell.value} & "
-            data_string += f"{row[-1].value}\\\\\n"
+                if type(cell.value) == float:
+                    data_string += f"{round(cell.value, accuracy)} & "
+                else:
+                    data_string += f"{cell.value} & "
+            if type(row[-1].value) == float:
+                data_string += f"{round(row[-1].value, accuracy)}\\\\\n"
+            else:
+                data_string += f"{row[-1].value}\\\\\n"
         f.write("\\begin{table}\n")
         f.write("\t\\centering\n")
         f.write("\t\\begin{tabular}{")
