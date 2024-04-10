@@ -43,7 +43,7 @@ def xlsx_to_latex(filename: str, xlsx_dir: str,
             for cell in row[:-1]:
                 # 如果含有公式的话，开头结尾要加上$$
                 data_string += f"{single_value(cell.value, accuracy)} & "
-            data_string += f"{single_value(cell.value, accuracy)}\\\\\n"
+            data_string += f"{single_value(row[-1].value, accuracy)}\\\\\n"
         f.write("\\begin{table}\n")
         f.write("\t\\centering\n")
         f.write("\t\\begin{tabular}{")
