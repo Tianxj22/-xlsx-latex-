@@ -54,10 +54,8 @@ def xlsx_to_latex(filename: str, xlsx_dir: str,
             data_string += "\t\t"
             for cell in row[:-1]:
                 # 如果含有公式的话，开头结尾要加上$$
-                data_string += f"{single_value(cell, accuracy)} & "
-            data_string += f"{single_value(cell, accuracy)}\\\\\n"
-
-        # 下面是负责写文件的部分
+                data_string += f"{single_value(cell.value, accuracy)} & "
+            data_string += f"{single_value(row[-1].value, accuracy)}\\\\\n"
         f.write("\\begin{table}\n")
         f.write("\t\\centering\n")
         f.write("\t\\begin{tabular}{")
