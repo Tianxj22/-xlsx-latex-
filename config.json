@@ -1,1 +1,6 @@
-{"empty_filler": " ", "formular": true, "toprule": true}
+{
+    "empty_filler": " ", 
+    "formular": true, 
+    "toprule": true, 
+    "full_lines": true
+}

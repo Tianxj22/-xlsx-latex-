@@ -5,23 +5,36 @@ import openpyxl
 import os
 from file_and_path import *
 from config_dealer import *
+from xls_reader import *
 
 config = get_config()
 
 #———————————————————函数————————————————————#
 
-def single_value(value, accuracy: 2)->str:
-    '''将单个数据转化成字符格式'''
+def is_fomular(origin: str) -> str:
+    return f"${origin}$"
+
+
+
+def single_value(cell, accuracy: 2)->str:
+    '''将单个单元格的数据转化成字符格式'''
     rt = ''
+    # 首先查看是否要写公式
     if config['formular']:
         rt += '$'
 
-    if type(value) == float:
-        rt += f"{round(value, accuracy)}"
-    elif value == None:
+    # 这里负责处理合并单元格
+    # if type(cell) == MergeCell:
+    #     if cell.is_lt:
+
+
+    # 这里负责处理小数
+    if type(cell.val) == float:
+        rt += f"{round(cell.val, accuracy)}"
+    elif cell.val == None:
         rt += config['empty_filler']
     else:
-        rt += f"{value}"
+        rt += f"{cell.val}"
     
     if config['formular']:
         rt += '$'
@@ -30,20 +43,21 @@ def single_value(value, accuracy: 2)->str:
 def xlsx_to_latex(filename: str, xlsx_dir: str,
     output_dir: str, accuracy = 2):
     '''将指定的某个名称的表格转化成latex代码,并输出到指定目录下,存储在同名的txt文件下'''
-    workbook = openpyxl.load_workbook(filename=os.path.join(xlsx_dir, filename), data_only=True)
+    reader = XlsReader(file_name=os.path.join(xlsx_dir, filename), data_only=True)
     f = open(os.path.join(output_dir, f"{filename.split('.')[0]}.txt"), 'w')
-    for sheetname in workbook.sheetnames:
-        worksheet = workbook[sheetname]
+    for sheetname, data in reader.data.items():
         print(f"\t现在处理工作簿: {sheetname}")
         data_string = ""
         n = 0
-        for row in worksheet.rows:
+        for row in data:
             n = max(len(row), n)
             data_string += "\t\t"
             for cell in row[:-1]:
                 # 如果含有公式的话，开头结尾要加上$$
-                data_string += f"{single_value(cell.value, accuracy)} & "
-            data_string += f"{single_value(cell.value, accuracy)}\\\\\n"
+                data_string += f"{single_value(cell, accuracy)} & "
+            data_string += f"{single_value(cell, accuracy)}\\\\\n"
+
+        # 下面是负责写文件的部分
         f.write("\\begin{table}\n")
         f.write("\t\\centering\n")
         f.write("\t\\begin{tabular}{")

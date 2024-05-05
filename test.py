@@ -2,12 +2,6 @@
 
 import os
 import openpyxl
-import openpyxl.cell
-import openpyxl.workbook
-import openpyxl.worksheet
-import openpyxl.worksheet.cell_range
-import openpyxl.worksheet.merge
-import openpyxl.worksheet.worksheet
 
 cur_dir = os.path.dirname(os.path.realpath(__file__))
 filedir = os.path.join(cur_dir, "xlsx_file", "test.xlsx")
