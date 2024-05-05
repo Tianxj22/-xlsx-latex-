@@ -1,71 +1,72 @@
 \begin{table}
 	\centering
-	\begin{tabular}{ccc}
-		$1$ & $2$ & $2$\\
-		$0.1$ & $0.2$ & $0.2$\\
-		$4$ & $5$ & $5$\\
-	\end{tabular}
+	\begin{tabular}{|c|c|c|c|}
+		\hline		$1$ & $2$ & $3$ & $4$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4}		\multicolumn{1}{|c|}{\multirow{2}*{$5$}} & $6$ & \multicolumn{2}{|c|}{\multirow{2}*{$7$}}\\
+  \cline{2-2}		\multicolumn{1}{|c|}{\multirow{2}*{$ $}} & $8$ & \multicolumn{2}{|c|}{\multirow{2}*{$ $}}\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4}		$9$ & \multicolumn{3}{|c|}{\multirow{1}*{$10$}}\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4}	\end{tabular}
 	\caption{工作表1}
 \end{table}
 
 
 \begin{table}
 	\centering
-	\begin{tabular}{cccccc}
-		$1$ & $2$ & $3$ & $4$ & $5$ & $5$\\
-		$2$ & $3$ & $4$ & $5$ & $6$ & $6$\\
-		$3$ & $4$ & $5$ & $6$ & $7$ & $7$\\
-		$4$ & $5$ & $6$ & $7$ & $8$ & $8$\\
-		$5$ & $6$ & $7$ & $8$ & $9$ & $9$\\
-		$6$ & $7$ & $8$ & $9$ & $10$ & $10$\\
-		$7$ & $8$ & $9$ & $10$ & $11$ & $11$\\
-		$8$ & $9$ & $10$ & $11$ & $12$ & $12$\\
-		$9$ & $10$ & $11$ & $12$ & $13$ & $13$\\
-	\end{tabular}
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline		$1$ & $2$ & $3$ & $4$ & $5$ & $6$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4} \cline{5-5} \cline{6-6}		$2$ & $3$ & $4$ & $5$ & $6$ & $7$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4} \cline{5-5} \cline{6-6}		$3$ & $4$ & $5$ & $6$ & $7$ & $8$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4} \cline{5-5} \cline{6-6}		$4$ & $5$ & $6$ & $7$ & $8$ & $9$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4} \cline{5-5} \cline{6-6}		$5$ & $6$ & $7$ & $8$ & $9$ & $10$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4} \cline{5-5} \cline{6-6}		$6$ & $7$ & $8$ & $9$ & $10$ & $11$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4} \cline{5-5} \cline{6-6}		$7$ & $8$ & $9$ & $10$ & $11$ & $12$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4} \cline{5-5} \cline{6-6}		$8$ & $9$ & $10$ & $11$ & $12$ & $13$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4} \cline{5-5} \cline{6-6}		$9$ & $10$ & $11$ & $12$ & $13$ & $14$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4} \cline{5-5} \cline{6-6}	\end{tabular}
 	\caption{工作表2}
 \end{table}
 
 
 \begin{table}
 	\centering
-	\begin{tabular}{cccc}
-		$1$ & $2$ & $3$ & $3$\\
-		$2$ & $3$ & $4$ & $4$\\
-		$3$ & $4$ & $5$ & $5$\\
-		$4$ & $5$ & $6$ & $6$\\
-		$5$ & $6$ & $7$ & $7$\\
-		$6$ & $7$ & $8$ & $8$\\
-		$7$ & $8$ & $9$ & $9$\\
-	\end{tabular}
+	\begin{tabular}{|c|c|c|c|}
+		\hline		$1$ & $2$ & $3$ & $4$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4}		$2$ & $3$ & $4$ & $5$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4}		$3$ & $4$ & $5$ & $6$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4}		$4$ & $5$ & $6$ & $7$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4}		$5$ & $6$ & $7$ & $8$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4}		$6$ & $7$ & $8$ & $9$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4}		$7$ & $8$ & $9$ & $10$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4}	\end{tabular}
 	\caption{工作表3}
 \end{table}
 
 
 \begin{table}
 	\centering
-	\begin{tabular}{ccc}
-		$7$ & $8$ & $8$\\
-		$8$ & $9$ & $9$\\
-		$9$ & $10$ & $10$\\
-		$10$ & $11$ & $11$\\
-		$11$ & $12$ & $12$\\
-		$12$ & $13$ & $13$\\
-	\end{tabular}
+	\begin{tabular}{|c|c|c|}
+		\hline		$7$ & $8$ & $9$\\
+  \cline{1-1} \cline{2-2} \cline{3-3}		$8$ & $9$ & $10$\\
+  \cline{1-1} \cline{2-2} \cline{3-3}		$9$ & $10$ & $11$\\
+  \cline{1-1} \cline{2-2} \cline{3-3}		$10$ & $11$ & $12$\\
+  \cline{1-1} \cline{2-2} \cline{3-3}		$11$ & $12$ & $13$\\
+  \cline{1-1} \cline{2-2} \cline{3-3}		$12$ & $13$ & $14$\\
+  \cline{1-1} \cline{2-2} \cline{3-3}	\end{tabular}
 	\caption{工作表4}
 \end{table}
 
 
 \begin{table}
 	\centering
-	\begin{tabular}{cccc}
-		$3$ & $A_i$ & $U_{BF}$ & $U_{BF}$\\
-		$4$ & $5$ & $6$ & $6$\\
-		$5$ & $6$ & $7$ & $7$\\
-		$6$ & $7$ & $8$ & $8$\\
-		$7$ & $8$ & $ $ & $ $\\
-		$8$ & $ $ & $10$ & $10$\\
-		$9$ & $10$ & $11$ & $11$\\
-	\end{tabular}
+	\begin{tabular}{|c|c|c|c|}
+		\hline		$3$ & $A_i$ & $U_{BF}$ & $6$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4}		$4$ & $5$ & $6$ & $7$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4}		$5$ & $6$ & $7$ & $8$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4}		$6$ & $7$ & $8$ & $9$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4}		$7$ & \multicolumn{2}{|c|}{\multirow{1}*{$8$}} & $10$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4}		$8$ & $ $ & $10$ & $11$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4}		$9$ & $10$ & $11$ & $12$\\
+  \cline{1-1} \cline{2-2} \cline{3-3} \cline{4-4}	\end{tabular}
 	\caption{工作表5}
 \end{table}
 

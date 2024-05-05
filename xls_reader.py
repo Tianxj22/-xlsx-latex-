@@ -42,7 +42,7 @@ class XlsReader():
         for merge_range in merge_ranges:
             for row in range(merge_range.min_row - 1, merge_range.max_row):
                 for col in range(merge_range.min_col - 1, merge_range.max_col):
-                    merge_cells[f"[{row}, {col}]"] = {"lt_pos": [merge_range.min_row, merge_range.min_col],
+                    merge_cells[f"[{row}, {col}]"] = {"lt_pos": [merge_range.min_row - 1, merge_range.min_col - 1],
                                                       "shape": [merge_range.max_row - merge_range.min_row + 1, merge_range.max_col - merge_range.min_col + 1]}
         for row in worksheet:
             temp = []
@@ -63,7 +63,7 @@ class XlsReader():
 
 #————————————————————————————————————————————程序————————————————————————————————————————————#
 
-reader = XlsReader("/home/tianxj/myCode/useful_program/xls_to_latex_label/xlsx_file/test.xlsx", data_only=True)
-for row in reader.data["工作表1"]:
-    for cell in row:
-        print(cell)
+# reader = XlsReader("/home/tianxj/myCode/useful_program/xls_to_latex_label/xlsx_file/test.xlsx", data_only=True)
+# for row in reader.data["工作表1"]:
+#     for cell in row:
+#         print(cell)

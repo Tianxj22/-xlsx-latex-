@@ -28,4 +28,4 @@ def save_config(config: dict):
 
 #————————————————————————————————————————————————#
 
-save_config({'empty_filler': ' ', 'formular': True, 'toprule': True})
+# save_config({'empty_filler': ' ', 'formular': True, 'toprule': True})
