@@ -35,7 +35,7 @@ def to_multi(origin: str, cell: MergeCell) -> str:
 def add_tail(origin: str, cell, end=False):
     '''为单元格添加结尾的后缀'''
     if end:
-        return f"{origin}\\\\\n"
+        return f"{origin}\\\\"
     elif type(cell) == BaseCell or (type(cell) == MergeCell and cell.lt_pos[1] + cell.shape[1] - 1 == cell.pos[1]):
         return f"{origin} & "
     return origin
@@ -81,17 +81,17 @@ def xlsx_to_latex(filename: str, xlsx_dir: str,
     output_dir: str, accuracy = 2):
     '''将指定的某个名称的表格转化成latex代码,并输出到指定目录下,存储在同名的txt文件下'''
     reader = XlsReader(file_name=os.path.join(xlsx_dir, filename), data_only=True)
-    f = open(os.path.join(output_dir, f"{filename.split('.')[0]}.txt"), 'w')
+    f = open(os.path.join(output_dir, f"{filename.split('.')[0]}.txt"), 'w', encoding="utf-8")
     for sheetname, data in reader.data.items():
         print(f"\t现在处理工作簿: {sheetname}")
-        data_string = "\t\t\hline"
+        data_string = "\t\t\hline\n"
         n = max([len(row) for row in data])
         for row in data:
             data_string += "\t\t"
             for cell in row[:-1]:
                 # 如果含有公式的话，开头结尾要加上$$
                 data_string += f"{single_value(cell, accuracy, end=False)}"
-            data_string += f"{single_value(row[-1], accuracy, end=True)} {add_line(row=row, full_line=full_line)}"
+            data_string += f"{single_value(row[-1], accuracy, end=True)} {add_line(row=row, full_line=full_line)}\n"
         f.write("\\begin{table}\n")
         f.write("\t\\centering\n")
         f.write("\t\\begin{tabular}{")
